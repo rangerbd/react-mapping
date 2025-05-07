@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import emojipedia from "./components/emoji"
+import Emoji from './components/emojiRender';
+
+
+function createCard(emojipedia){
+  return (
+    <Emoji
+      key = {emojipedia.id}
+      emoji = {emojipedia.emoji}
+      name = {emojipedia.name}
+      meaning = {emojipedia.meaning}
+     />
+  )
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {emojipedia.map(createCard)}
     </div>
   );
 }
